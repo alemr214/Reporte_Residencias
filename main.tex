@@ -42,11 +42,44 @@
 \usepackage{titlesec}
 \usepackage{setspace}
 \onehalfspacing
-\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
 \setlength{\parindent}{0pt}
+
+% =============================
+% ESTILO NORMAL DE CAPÍTULOS
+% =============================
 \titleformat{\chapter}
 {\bfseries\fontsize{14}{16}\selectfont}
 {\thechapter.}{1em}{}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+% =============================
+% ESTILO ESPECIAL PARA CAPÍTULOS CENTRADOS
+% =============================
+\newcommand{\chaptercentered}[1]{
+    \cleardoublepage
+    \thispagestyle{empty}
+
+    \refstepcounter{chapter}
+
+    \vspace*{\fill}
+
+    \begin{center}
+        {\bfseries\fontsize{22}{26}\selectfont Capítulo \thechapter}
+
+        \vspace{1.5cm}
+
+        {\bfseries\fontsize{22}{26}\selectfont #1}
+    \end{center}
+
+    \vspace*{\fill}
+
+    \addcontentsline{toc}{chapter}{\thechapter.\ #1}
+}
+
+% =============================
+% ESTILO NORMAL DE SECCIONES
+% =============================
 \titleformat{\section}
 {\bfseries\fontsize{14}{16}\selectfont}
 {\thesection}{1em}{}
@@ -61,6 +94,7 @@ font={small},
 labelfont=bf,
 justification=centering
 }
+
 \captionsetup[table]{
 font={small},
 labelfont=bf,
@@ -69,57 +103,69 @@ justification=centering
 
 % Configuracion del código 
 \lstset{
-    basicstyle=\ttfamily\small,     % Fuente
+    basicstyle=\ttfamily\small,
     backgroundcolor=\color{white},
-    showstringspaces=false,         % Espacios
-    frame=single,                   % Cuadro alrededor
-    breaklines=true,                % Salto de línea automático
-    captionpos=b                    % Caption abajo
+    showstringspaces=false,
+    frame=single,
+    breaklines=true,
+    captionpos=b
 }
 
 \makeindex
-\title{DESARROLLO DE APLICACIONES REACT PARA PLATAFORMA DEL SISTEMA INTEGRAL DE PRODUCCIÓN }
+\title{DESARROLLO DE APLICACIONES REACT PARA PLATAFORMA DEL SISTEMA INTEGRAL DE PRODUCCIÓN}
 \author{Alejandro Martinez Rivera}
 
-
-%--------------------------------------------------------------------
+% ====================================================================
 \begin{document}
+
 % =============================
 %           PORTADA
 % =============================
 \pagenumbering{roman}
-\input{inicial/Agradecimientos} \newpage
-\input{inicial/Resumen} \newpage
-\tableofcontents
-\newpage
-\listoffigures
-\newpage
-\listoftables
-\newpage
+
+\input{inicial/Agradecimientos}             \newpage
+
+\input{inicial/Resumen}                     \newpage
+
+\tableofcontents                            \newpage
+
+\listoffigures                              \newpage
+
+\listoftables                               \newpage
+
 \pagenumbering{arabic}
 
 \input{inicial/Introduccion}
 
-\chapter{Marco metodológico}
-\input{metodologico/Empresa} \newpage
-\input{metodologico/Problematica} \newpage
-\input{metodologico/Solucion} \newpage
-\input{metodologico/Objetivos} \newpage
-\input{metodologico/Justificacion} \newpage
-\input{metodologico/Area} \newpage
-\input{metodologico/Actividades} \newpage
+% =============================
+% CAPÍTULOS CENTRADOS
+% =============================
 
-\chapter{Marco teórico}
-\input{teorico/Frontend} \newpage
-\input{teorico/Backend} \newpage
-\input{teorico/Gestoresdb} \newpage
+\chaptercentered{Marco metodológico}        \newpage
 
-\chapter{Desarrollo de actividades}
+\input{metodologico/Empresa}                \newpage
+\input{metodologico/Problematica}           \newpage
+\input{metodologico/Solucion}               \newpage
+\input{metodologico/Objetivos}              \newpage
+\input{metodologico/Justificacion}          \newpage
+\input{metodologico/Area}                   \newpage
+\input{metodologico/Actividades}            \newpage
+
+\chaptercentered{Marco teórico}             \newpage
+
+\input{teorico/Frontend}                    \newpage
+\input{teorico/Backend}                     \newpage
+\input{teorico/Gestoresdb}                  \newpage
+
+\chaptercentered{Desarrollo de actividades} \newpage
 
 
-\chapter{Resultados finales}
-\input{final/DetallesFinales} \newpage
-\input{final/Competencias} \newpage
+\chaptercentered{Resultados finales}        \newpage
+
+\input{final/DetallesFinales}               \newpage
+
+
+\input{final/Competencias}                  \newpage
 \input{final/Conclusiones}
 
 % Referencias bibliográficas
