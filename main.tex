@@ -1,0 +1,127 @@
+% =============================
+%        CONFIGURACION
+% =============================
+\documentclass[spanish,12pt,letterpaper,oneside,titlepage]{report}
+
+% Paquetes de fuentes
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{mathptmx}
+
+% Configuración de la hoja
+\usepackage[left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{caption}
+
+% Configuracion de imagenes
+\usepackage{graphicx}
+\usepackage{float}
+\graphicspath{ {images/} }
+
+
+% Configuracion de tablas
+\usepackage[es-tabla]{babel}
+\usepackage{tabularx}
+
+
+% Configuracion de enlaces
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	allcolors=blue
+}
+
+% Configuracion de referencias y citas
+\usepackage{csquotes}
+\usepackage[backend=biber,style=apa]{biblatex}
+\addbibresource{referencias.bib}
+
+% Configuracion de texto
+\usepackage{titlesec}
+\usepackage{setspace}
+\onehalfspacing
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\setlength{\parindent}{0pt}
+\titleformat{\chapter}
+{\bfseries\fontsize{14}{16}\selectfont}
+{\thechapter.}{1em}{}
+\titleformat{\section}
+{\bfseries\fontsize{14}{16}\selectfont}
+{\thesection}{1em}{}
+
+\usepackage{amssymb} % Paquete para fórmulas matemáticas
+
+\usepackage{listings} % Paquete para escritura de código
+
+% Configuracion notas de imagen y tabla
+\captionsetup[figure]{
+font={small},
+labelfont=bf,
+justification=centering
+}
+\captionsetup[table]{
+font={small},
+labelfont=bf,
+justification=centering
+}
+
+% Configuracion del código 
+\lstset{
+    basicstyle=\ttfamily\small,     % Fuente
+    backgroundcolor=\color{white},
+    showstringspaces=false,         % Espacios
+    frame=single,                   % Cuadro alrededor
+    breaklines=true,                % Salto de línea automático
+    captionpos=b                    % Caption abajo
+}
+
+\makeindex
+\title{DESARROLLO DE APLICACIONES REACT PARA PLATAFORMA DEL SISTEMA INTEGRAL DE PRODUCCIÓN }
+\author{Alejandro Martinez Rivera}
+
+
+%--------------------------------------------------------------------
+\begin{document}
+% =============================
+%           PORTADA
+% =============================
+\pagenumbering{roman}
+\input{inicial/Agradecimientos} \newpage
+\input{inicial/Resumen} \newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+\pagenumbering{arabic}
+
+\input{inicial/Introduccion}
+
+\chapter{Marco metodológico}
+\input{metodologico/Empresa} \newpage
+\input{metodologico/Problematica} \newpage
+\input{metodologico/Solucion} \newpage
+\input{metodologico/Objetivos} \newpage
+\input{metodologico/Justificacion} \newpage
+\input{metodologico/Area} \newpage
+\input{metodologico/Actividades} \newpage
+
+\chapter{Marco teórico}
+\input{teorico/Frontend} \newpage
+\input{teorico/Backend} \newpage
+\input{teorico/Gestoresdb} \newpage
+
+\chapter{Desarrollo de actividades}
+
+
+\chapter{Resultados finales}
+\input{final/DetallesFinales} \newpage
+\input{final/Competencias} \newpage
+\input{final/Conclusiones}
+
+% Referencias bibliográficas
+\printbibliography[heading=bibintoc]
+\end{document}

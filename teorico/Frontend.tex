@@ -1,0 +1,47 @@
+\section{Front-end}
+
+El desarrollo front-end se refiere al proceso de diseño, estructuración e implementación de las interfaces visuales con las que los usuarios interactúan dentro de un sistema. Su propósito principal es facilitar la interacción entre el usuario y las funcionalidades del sistema, permitiendo ejecutar acciones previamente definidas de manera intuitiva y eficiente \parencite{FrontentGG}.
+
+Este proceso implica considerar diversos factores, tales como los dispositivos en los que se visualizará el sistema, así como los entornos de ejecución, en el caso de las aplicaciones web (WebApps). Asimismo, el desarrollo front-end promueve la creación de componentes reutilizables, lo que contribuye a evitar la duplicidad de código y optimiza tanto el mantenimiento como la escalabilidad del sistema.
+
+\input{teorico/LenguajesWeb}
+
+\subsection{React.js}
+
+React.js es una biblioteca de código abierto desarrollada por Meta Platforms, Inc. (anteriormente Facebook), utilizada para la construcción de interfaces de usuario en aplicaciones web. Se basa en el uso de componentes, los cuales son unidades independientes y reutilizables que permiten estructurar la interfaz de manera modular, facilitando el desarrollo, mantenimiento y escalabilidad de los sistemas.
+
+Esta biblioteca emplea JavaScript y, de forma opcional, TypeScript, integrando una extensión de sintaxis conocida como JSX (o TSX en el caso de TypeScript). Esta sintaxis permite combinar estructuras similares a HTML con la lógica de programación, lo que posibilita una definición más intuitiva de la interfaz y su comportamiento en un mismo contexto.
+
+La filosofía principal de React.js se centra en la creación de componentes reutilizables y atómicos que gestionan su propio estado (state) y propiedades (props), permitiendo que la interfaz de usuario se actualice de manera eficiente en respuesta a cambios en los datos. Este enfoque declarativo favorece el desarrollo de aplicaciones dinámicas, donde los elementos visuales pueden modificar su comportamiento e interacción según las necesidades del sistema.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\linewidth]{react.png}
+    \caption{Logo de React.js.}
+    \label{fig:LogoReact}
+\end{figure}
+
+\subsection{Vite}
+
+Vite es una herramienta moderna de desarrollo y construcción de aplicaciones web que facilita la ejecución, compilación y optimización del código en proyectos basados en frameworks como React. Su principal objetivo es mejorar tanto la experiencia de desarrollo como el rendimiento de las aplicaciones finales que se ejecutan en el navegador.
+
+Vite se caracteriza por ofrecer un entorno de desarrollo rápido mediante el uso de módulos nativos del navegador, lo que permite cargar únicamente las dependencias necesarias bajo demanda. Esto contribuye a reducir los tiempos de inicio y a optimizar el consumo de recursos, evitando la carga de código innecesario. Además, durante el proceso de construcción (build), Vite genera versiones optimizadas del código, preparadas para su despliegue en entornos de producción \parencite[]{ViteJS}.
+
+Una de sus principales características es el soporte de Hot Module Replacement (HMR), que permite reflejar en tiempo real los cambios realizados en el código sin necesidad de recargar completamente la aplicación. Esto mejora significativamente la eficiencia del desarrollo (Figura \ref{fig:Vitejs}).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{vitejs.png}
+    \caption{Funcionalidad de Vitejs.}
+    \label{fig:Vitejs}
+\end{figure}
+
+A diferencia de herramientas tradicionales como Babel, que se enfocan principalmente en la transformación de código, Vite integra un enfoque más completo que abarca tanto el desarrollo como la optimización del sistema, posicionándose como una alternativa moderna ampliamente adoptada en la comunidad de desarrollo web \parencite[]{BuildTools}.
+
+\subsection{Nodejs}
+
+Node.js es un entorno de ejecución de JavaScript, de código abierto y multiplataforma, que permite ejecutar código fuera del navegador, principalmente en el lado del servidor. Se caracteriza por su modelo de ejecución asíncrono y orientado a eventos, lo que facilita la creación de aplicaciones eficientes y altamente escalables \parencite[]{Nodejs}.
+
+Este entorno utiliza un modelo de operaciones no bloqueantes, lo que significa que puede gestionar múltiples solicitudes de manera concurrente sin necesidad de crear múltiples hilos de ejecución. De esta forma, Node.js optimiza el uso de recursos del sistema, permaneciendo en espera cuando no existen tareas por procesar y activándose únicamente cuando se presentan eventos o solicitudes que requieren atención.
+
+En el contexto del desarrollo de aplicaciones modernas, Node.js actúa como base para diversas herramientas y entornos, como los utilizados en proyectos con React y Vite. A través de este, es posible ejecutar servidores de desarrollo, gestionar dependencias y automatizar procesos, permitiendo simular y probar el comportamiento de las aplicaciones antes de su ejecución final en el navegador.
