@@ -124,23 +124,21 @@ justification=centering
 \pagenumbering{roman}
 
 \input{inicial/Agradecimientos}             \newpage
-
 \input{inicial/Resumen}                     \newpage
 
 \tableofcontents                            \newpage
-
 \listoffigures                              \newpage
-
 \listoftables                               \newpage
 
 \pagenumbering{arabic}
 
 \input{inicial/Introduccion}
+\addcontentsline{toc}{chapter}{Introducción}
 
 % =============================
 % CAPÍTULOS CENTRADOS
 % =============================
-
+\setcounter{chapter}{0}
 \chaptercentered{Marco metodológico}        \newpage
 
 \input{metodologico/Empresa}                \newpage
@@ -157,16 +155,16 @@ justification=centering
 \input{teorico/Backend}                     \newpage
 \input{teorico/Gestoresdb}                  \newpage
 
-\chaptercentered{Desarrollo de actividades} \newpage
+\chaptercentered{Desarrollo del proyecto} \newpage
 
 
 \chaptercentered{Resultados finales}        \newpage
 
-\input{final/DetallesFinales}               \newpage
-
-
-\input{final/Competencias}                  \newpage
+\input{final/Competencias}
+\addcontentsline{toc}{chapter}{Competencias desarrolladas}
 \input{final/Conclusiones}
+\addcontentsline{toc}{chapter}{Conclusiones}
+
 
 % Referencias bibliográficas
 \printbibliography[heading=bibintoc]
