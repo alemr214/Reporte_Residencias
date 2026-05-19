@@ -1,5 +1,146 @@
 \section{Requerimientos}
 
+Dentro del proceso de desarrollo interno de software en TenarisTamsa, las especificaciones que el sistema debe cumplir (es decir, los requerimientos de software) son definidas por personal de la propia compañía. Dichas especificaciones establecen las necesidades y funcionalidades que deben contemplarse para garantizar el cumplimiento integral de los objetivos del sistema.
+
+A través del equipo de desarrollo se lleva a cabo un proceso de análisis y negociación de estas propuestas, con el fin de alcanzar un consenso claro y específico sobre las capacidades, alcances y limitaciones que tendrá el sistema.
+
+El Sistema Integral de Producción está conformado por distintos módulos internos, cada uno orientado a cubrir las necesidades de diversas áreas operativas de la corporación. Debido a ello, diferentes grupos de trabajo pueden establecer consensos particulares respecto a las funcionalidades y características que debe incluir cada módulo antes de su implementación dentro de las áreas productivas de la empresa.
+
+No obstante, es importante destacar que todos los módulos pertenecientes al Sistema Integral de Producción deben cumplir con una serie de requerimientos generales establecidos conforme a los estándares corporativos definidos por Tenaris.
+
 \subsection{Requerimientos funcionales}
 
-\subsection{Requerimientos no funcionales}
+\textbf{Inicio de sesión}: El sistema deberá permitir el inicio de sesión únicamente a los usuarios que hayan sido previamente registrados en el módulo correspondiente por un usuario con permisos de administrador o gerente (Tabla \ref{tab:req_sesion}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento funcional - Inicio de sesión}
+    \label{tab:req_sesion}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RF-01                                                                                                                                                                                                                                             \\ \hline
+        Nombre                  & Inicio de sesión                                                                                                                                                                                                                                  \\ \hline
+        Propósito               & Permitir el acceso seguro al sistema únicamente a usuarios autorizados.                                                                                                                                                                           \\ \hline
+        Descripción general     & El sistema deberá permitir el inicio de sesión a los usuarios previamente registrados en el módulo correspondiente mediante el uso de credenciales válidas, asignando los permisos de acceso de acuerdo con el rol establecido para cada usuario. \\ \hline
+        Prioridad               & Alta                                                                                                                                                                                                                                              \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+\textbf{Gestión de usuarios}: El sistema deberá permitir a los usuarios con rol de administrador o gerente gestionar las cuentas de usuario del módulo, incluyendo la creación, modificación y eliminación de usuarios (Tabla \ref{tab:req_usuarios}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento funcional - Gestión de usuarios}
+    \label{tab:req_usuarios}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RF-02                                                                                                                                                                                                                         \\ \hline
+        Nombre                  & Gestión de usuarios                                                                                                                                                                                                           \\ \hline
+        Propósito               & Administrar las cuentas de usuario y sus permisos dentro del sistema.                                                                                                                                                         \\ \hline
+        Descripción general     & El sistema deberá permitir a los usuarios con rol de administrador o gerente crear, modificar y eliminar cuentas de usuario dentro del módulo correspondiente, así como asignar los permisos de acceso según el rol definido. \\ \hline
+        Prioridad               & Alta                                                                                                                                                                                                                          \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+\textbf{Reporte de producción}: El sistema deberá permitir a los usuarios generar reportes de producción dentro del módulo correspondiente (Tabla \ref{tab:req_reporte}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento funcional - Reporte de producción}
+    \label{tab:req_reporte}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RF-03                                                                                                                                                                                       \\ \hline
+        Nombre                  & Reporte de producción                                                                                                                                                                       \\ \hline
+        Propósito               & Registrar la información relacionada con la producción realizada.                                                                                                                           \\ \hline
+        Descripción general     & El sistema deberá permitir a los usuarios generar reportes de producción mediante el registro de la información correspondiente a las actividades realizadas durante el proceso productivo. \\ \hline
+        Prioridad               & Alta                                                                                                                                                                                        \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+\textbf{Gestión de registros de producción}: El sistema deberá permitir a los usuarios con rol de operador modificar o eliminar únicamente sus propios registros de producción. Asimismo, los usuarios con rol de supervisor o administrador podrán modificar o eliminar los registros de producción de cualquier usuario (Tabla \ref{tab:req_registros}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento funcional - Gestión de registros de producción}
+    \label{tab:req_registros}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RF-04                                                                                                                                                                                                                                                                         \\ \hline
+        Nombre                  & Gestión de registros de producción                                                                                                                                                                                                                                            \\ \hline
+        Propósito               & Mantener actualizada y controlada la información de producción registrada en el sistema.                                                                                                                                                                                      \\ \hline
+        Descripción general     & El sistema deberá permitir a los usuarios con rol de operador modificar o eliminar únicamente sus propios registros de producción. Asimismo, los usuarios con rol de supervisor o administrador podrán modificar o eliminar los registros de producción de cualquier usuario. \\ \hline
+        Prioridad               & Alta                                                                                                                                                                                                                                                                          \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+\textbf{Registro de almacén}: El sistema deberá permitir a los usuarios con rol de supervisor crear, modificar y eliminar registros relacionados con las materias primas disponibles en almacén (Tabla \ref{tab:req_almacen}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento funcional - Registro de almacén}
+    \label{tab:req_almacen}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RF-05                                                                                                                                                             \\ \hline
+        Nombre                  & Registro de almacén                                                                                                                                               \\ \hline
+        Propósito               & Gestionar la información relacionada con las materias primas disponibles en almacén.                                                                              \\ \hline
+        Descripción general     & El sistema deberá permitir a los usuarios con rol de supervisor crear, modificar y eliminar registros relacionados con las materias primas existentes en almacén. \\ \hline
+        Prioridad               & Media                                                                                                                                                             \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+\textbf{Visualización de la producción}: El sistema deberá permitir a los usuarios con rol de supervisor consultar la información de producción correspondiente al día y turno seleccionados (Tabla \ref{tab:req_visualizacion}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento funcional - Visualización de la producción}
+    \label{tab:req_visualizacion}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RF-06                                                                                                                                                 \\ \hline
+        Nombre                  & Visualización de la producción                                                                                                                        \\ \hline
+        Propósito               & Consultar la información de producción registrada en el sistema.                                                                                      \\ \hline
+        Descripción general     & El sistema deberá permitir a los usuarios con rol de supervisor visualizar la información de producción correspondiente al día y turno seleccionados. \\ \hline
+        Prioridad               & Media                                                                                                                                                 \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+\textbf{Programación de órdenes de producción}: El sistema deberá permitir a los usuarios con rol de programador cargar la programación de las órdenes de producción destinadas a los distintos centros productivos de la empresa (Tabla \ref{tab:req_ordenes}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento funcional - Programación de órdenes de producción}
+    \label{tab:req_ordenes}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RF-07                                                                                                                                                                                                       \\ \hline
+        Nombre                  & Programación de órdenes de producción                                                                                                                                                                       \\ \hline
+        Propósito               & Gestionar la programación de órdenes destinadas a los centros de producción.                                                                                                                                \\ \hline
+        Descripción general     & El sistema deberá permitir a los usuarios con rol de programador cargar y administrar la programación de las órdenes de producción que serán ejecutadas en los distintos centros productivos de la empresa. \\ \hline
+        Prioridad               & Alta                                                                                                                                                                                                        \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+\textbf{Modificación de productos}: El sistema deberá permitir a los usuarios con rol de administrador modificar las especificaciones de los productos registradas en el Sistema Integral de Producción (Tabla \ref{tab:req_productos}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento funcional - Modificación de productos}
+    \label{tab:req_productos}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RF-08                                                                                                                                                                \\ \hline
+        Nombre                  & Modificación de productos                                                                                                                                            \\ \hline
+        Propósito               & Mantener actualizadas las especificaciones de los productos registrados en el sistema.                                                                               \\ \hline
+        Descripción general     & El sistema deberá permitir a los usuarios con rol de administrador modificar las especificaciones de los productos registradas en el Sistema Integral de Producción. \\ \hline
+        Prioridad               & Media                                                                                                                                                                \\ \hline
+    \end{tabularx}
+\end{table}
