@@ -20,6 +20,8 @@ Sin embargo, es importante denotar que todos los módulos propios del Sistema In
 
 - Registro de almacén: Los usuarios con rol supervisor podrán generar, modificar o eliminar registros de materias primas que existan en almacén.
 
+- Visualización del stock en almacén: Los usuarios con rol operador, supervisor y administrador podrán visualizar el stock existente en almacén.
+
 - Visualización de la producción: Los usuarios con rol supervisor podrán visualizar la producción del día y turno seleccionados.
 
 - Programación de ordenes: Los usuarios programadores podrán subir la programación de las ordenes que se deberán de producir en los centros de producción de la empresa.
@@ -27,6 +29,14 @@ Sin embargo, es importante denotar que todos los módulos propios del Sistema In
 - Modificación de productos: Los usuarios administradores podrán realizar modificaciones en las especificaciones descritas en el Sistema Integral de Producción sobre los productos que genera la compañía.
 
 ### Requerimientos no funcionales
+
+- El sistema deberá autenticar a los usuarios mediante un nombre de usuario y contraseña antes de permitir el acceso a cualquier módulo.
+- El sistema deberá implementar control de acceso basado en roles (administrador, supervisor, operador y programador).
+- El sistema deberá soportar múltiples usuarios conectados simultáneamente sin degradación crítica del servicio.
+- El sistema deberá garantizar la integridad de los datos almacenados evitando duplicidad o pérdida de información.
+- El sistema deberá ser accesible desde equipos de escritorio utilizados dentro de la empresa.
+
+## Casos de uso
 
 ## Arquitectura de software
 
