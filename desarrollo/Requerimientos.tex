@@ -8,6 +8,11 @@ El Sistema Integral de Producción está conformado por distintos módulos inter
 
 No obstante, es importante destacar que todos los módulos pertenecientes al Sistema Integral de Producción deben cumplir con una serie de requerimientos generales establecidos conforme a los estándares corporativos definidos por Tenaris.
 
+
+% ===========================================================================================
+%                                   REQUERIMIENTOS FUNCIONALES
+% ===========================================================================================
+
 \subsection{Requerimientos funcionales}
 
 \textbf{Inicio de sesión}: El sistema deberá permitir el inicio de sesión únicamente a los usuarios que hayan sido previamente registrados en el módulo correspondiente por un usuario con permisos de administrador o gerente (Tabla \ref{tab:req_sesion}).
@@ -94,6 +99,22 @@ No obstante, es importante destacar que todos los módulos pertenecientes al Sis
     \end{tabularx}
 \end{table}
 
+\textbf{Visualización del stock en almacén}: El sistema deberá permitir a los usuarios con rol de operador, supervisor y administrador consultar la información del stock disponible de materias primas y productos registrados en almacén (Tabla \ref{tab:req_stock}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento funcional - Visualización del stock en almacén}
+    \label{tab:req_stock}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RF-06                                                                                                                                                                                                         \\ \hline
+        Nombre                  & Visualización del stock en almacén                                                                                                                                                                            \\ \hline
+        Propósito               & Consultar la disponibilidad de materias primas y productos registrados en almacén.                                                                                                                            \\ \hline
+        Descripción general     & El sistema deberá permitir a los usuarios con rol de operador, supervisor y administrador consultar la información correspondiente al stock disponible de materias primas y productos registrados en almacén. \\ \hline
+        Prioridad               & Media                                                                                                                                                                                                         \\ \hline
+    \end{tabularx}
+\end{table}
+
 
 \textbf{Visualización de la producción}: El sistema deberá permitir a los usuarios con rol de supervisor consultar la información de producción correspondiente al día y turno seleccionados (Tabla \ref{tab:req_visualizacion}).
 
@@ -103,7 +124,7 @@ No obstante, es importante destacar que todos los módulos pertenecientes al Sis
     \label{tab:req_visualizacion}
     \begin{tabularx}{\textwidth}{|X|X|}
         \hline
-        Código de requerimiento & RF-06                                                                                                                                                 \\ \hline
+        Código de requerimiento & RF-07                                                                                                                                                 \\ \hline
         Nombre                  & Visualización de la producción                                                                                                                        \\ \hline
         Propósito               & Consultar la información de producción registrada en el sistema.                                                                                      \\ \hline
         Descripción general     & El sistema deberá permitir a los usuarios con rol de supervisor visualizar la información de producción correspondiente al día y turno seleccionados. \\ \hline
@@ -120,7 +141,7 @@ No obstante, es importante destacar que todos los módulos pertenecientes al Sis
     \label{tab:req_ordenes}
     \begin{tabularx}{\textwidth}{|X|X|}
         \hline
-        Código de requerimiento & RF-07                                                                                                                                                                                                       \\ \hline
+        Código de requerimiento & RF-08                                                                                                                                                                                                       \\ \hline
         Nombre                  & Programación de órdenes de producción                                                                                                                                                                       \\ \hline
         Propósito               & Gestionar la programación de órdenes destinadas a los centros de producción.                                                                                                                                \\ \hline
         Descripción general     & El sistema deberá permitir a los usuarios con rol de programador cargar y administrar la programación de las órdenes de producción que serán ejecutadas en los distintos centros productivos de la empresa. \\ \hline
@@ -137,10 +158,100 @@ No obstante, es importante destacar que todos los módulos pertenecientes al Sis
     \label{tab:req_productos}
     \begin{tabularx}{\textwidth}{|X|X|}
         \hline
-        Código de requerimiento & RF-08                                                                                                                                                                \\ \hline
+        Código de requerimiento & RF-09                                                                                                                                                                \\ \hline
         Nombre                  & Modificación de productos                                                                                                                                            \\ \hline
         Propósito               & Mantener actualizadas las especificaciones de los productos registrados en el sistema.                                                                               \\ \hline
         Descripción general     & El sistema deberá permitir a los usuarios con rol de administrador modificar las especificaciones de los productos registradas en el Sistema Integral de Producción. \\ \hline
         Prioridad               & Media                                                                                                                                                                \\ \hline
+    \end{tabularx}
+\end{table}
+
+% ===========================================================================================
+%                               REQUERIMIENTOS NO FUNCIONALES
+% ===========================================================================================
+
+\subsection{Requerimientos no funcionales}
+
+\textbf{Autenticación de usuarios}: El sistema deberá autenticar a los usuarios mediante credenciales válidas de nombre de usuario y contraseña antes de permitir el acceso a cualquier módulo del sistema (Tabla \ref{tab:rnf_autenticacion}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento no funcional - Autenticación de usuarios}
+    \label{tab:rnf_autenticacion}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RNF-01                                                                                                                                                                  \\ \hline
+        Nombre                  & Autenticación de usuarios                                                                                                                                               \\ \hline
+        Propósito               & Garantizar que únicamente usuarios autorizados puedan acceder al sistema.                                                                                               \\ \hline
+        Descripción general     & El sistema deberá autenticar a los usuarios mediante credenciales válidas de nombre de usuario y contraseña antes de permitir el acceso a cualquier módulo del sistema. \\ \hline
+        Prioridad               & Alta                                                                                                                                                                    \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+\textbf{Control de acceso basado en roles}: El sistema deberá implementar mecanismos de control de acceso basados en roles, definiendo permisos específicos para los usuarios con rol de administrador, supervisor, operador y programador (Tabla \ref{tab:rnf_roles}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento no funcional - Control de acceso basado en roles}
+    \label{tab:rnf_roles}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RNF-02                                                                                                                                                                                          \\ \hline
+        Nombre                  & Control de acceso basado en roles                                                                                                                                                               \\ \hline
+        Propósito               & Restringir el acceso a funcionalidades del sistema según el rol del usuario.                                                                                                                    \\ \hline
+        Descripción general     & El sistema deberá implementar mecanismos de control de acceso basados en roles, definiendo permisos específicos para los usuarios con rol de administrador, supervisor, operador y programador. \\ \hline
+        Prioridad               & Alta                                                                                                                                                                                            \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+\textbf{Capacidad multiusuario}: El sistema deberá permitir la conexión simultánea de múltiples usuarios sin presentar degradaciones críticas en el rendimiento o disponibilidad del servicio (Tabla \ref{tab:rnf_multiusuario}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento no funcional - Capacidad multiusuario}
+    \label{tab:rnf_multiusuario}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RNF-03                                                                                                                                                         \\ \hline
+        Nombre                  & Capacidad multiusuario                                                                                                                                         \\ \hline
+        Propósito               & Permitir el acceso concurrente de múltiples usuarios al sistema.                                                                                               \\ \hline
+        Descripción general     & El sistema deberá soportar múltiples usuarios conectados simultáneamente sin presentar degradaciones críticas en el rendimiento o disponibilidad del servicio. \\ \hline
+        Prioridad               & Alta                                                                                                                                                           \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+\textbf{Integridad de la información}: El sistema deberá garantizar la integridad y consistencia de los datos almacenados, evitando la duplicidad, corrupción o pérdida de información (Tabla \ref{tab:rnf_integridad}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento no funcional - Integridad de la información}
+    \label{tab:rnf_integridad}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RNF-04                                                                                                                                           \\ \hline
+        Nombre                  & Integridad de la información                                                                                                                     \\ \hline
+        Propósito               & Garantizar la consistencia y confiabilidad de los datos almacenados en el sistema.                                                               \\ \hline
+        Descripción general     & El sistema deberá garantizar la integridad y consistencia de los datos almacenados, evitando la duplicidad, corrupción o pérdida de información. \\ \hline
+        Prioridad               & Alta                                                                                                                                             \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+\textbf{Compatibilidad con equipos de escritorio}: El sistema deberá ser accesible y funcional desde los equipos de escritorio utilizados dentro de la infraestructura de la empresa (Tabla \ref{tab:rnf_compatibilidad}).
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimiento no funcional - Compatibilidad con equipos de escritorio}
+    \label{tab:rnf_compatibilidad}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Código de requerimiento & RNF-05                                                                                                                                         \\ \hline
+        Nombre                  & Compatibilidad con equipos de escritorio                                                                                                       \\ \hline
+        Propósito               & Garantizar el acceso y funcionamiento del sistema en los equipos utilizados dentro de la empresa.                                              \\ \hline
+        Descripción general     & El sistema deberá ser accesible y funcional desde los equipos de escritorio utilizados dentro de la infraestructura tecnológica de la empresa. \\ \hline
+        Prioridad               & Media                                                                                                                                          \\ \hline
     \end{tabularx}
 \end{table}
