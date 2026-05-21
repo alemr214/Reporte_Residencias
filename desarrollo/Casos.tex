@@ -1,1 +1,395 @@
+% ===========================================================================================
+%                                       CASOS DE USO
+% ===========================================================================================
+
 \section{Casos de uso}
+
+Los casos de uso describen las interacciones entre los actores y el Sistema Integral de Producción, especificando las funcionalidades que el sistema proporciona para cumplir con los requerimientos funcionales definidos. Cada caso de uso representa una secuencia de acciones orientadas a alcanzar un objetivo específico dentro del sistema.
+
+% ===========================================================================================
+%                                       CU-01
+% ===========================================================================================
+
+\textbf{Caso de Inicio de sesión}
+
+\begin{table}[H]
+    \centering
+    \caption{Caso de uso - Inicio de sesión}
+    \label{tab:cu01}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Identificador             & CU-01                                                                        \\ \hline
+        Nombre                    & Inicio de sesión                                                             \\ \hline
+        Objetivo                  & Permitir el acceso seguro al sistema mediante credenciales válidas.          \\ \hline
+        Actor principal           & Usuario                                                                      \\ \hline
+        Precondiciones            & El usuario debe estar previamente registrado en el sistema.                  \\ \hline
+        Postcondiciones           & El usuario accede al sistema de acuerdo con los permisos asignados a su rol. \\ \hline
+        Requerimiento relacionado & RF-01                                                                        \\ \hline
+    \end{tabularx}
+\end{table}
+
+\textbf{Flujo principal}
+
+\begin{enumerate}
+    \item El usuario accede a la pantalla de inicio de sesión.
+    \item El sistema solicita el nombre de usuario y contraseña.
+    \item El usuario ingresa sus credenciales.
+    \item El sistema valida la información proporcionada.
+    \item El sistema concede acceso según el rol asignado.
+\end{enumerate}
+
+\textbf{Flujos alternos}
+
+\begin{itemize}
+    \item Credenciales inválidas:
+          \begin{enumerate}
+              \item El sistema muestra un mensaje de error.
+              \item El usuario puede intentar nuevamente.
+          \end{enumerate}
+\end{itemize}
+
+\textbf{Diagrama de caso de uso}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{inicio_sesion}
+    \caption{Flujo del inicio de sesión.}
+\end{figure}
+
+% ===========================================================================================
+%                                       CU-02
+% ===========================================================================================
+
+\textbf{Caso de uso: Gestión de usuarios}
+
+\begin{table}[H]
+    \centering
+    \caption{Caso de uso - Gestión de usuarios}
+    \label{tab:cu02}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Identificador             & CU-02                                                                 \\ \hline
+        Nombre                    & Gestión de usuarios                                                   \\ \hline
+        Objetivo                  & Administrar las cuentas de usuario y sus permisos dentro del sistema. \\ \hline
+        Actor principal           & Administrador, Supervisor                                             \\ \hline
+        Precondiciones            & El usuario debe haber iniciado sesión con permisos válidos.           \\ \hline
+        Postcondiciones           & La información de los usuarios queda actualizada en el sistema.       \\ \hline
+        Requerimiento relacionado & RF-02                                                                 \\ \hline
+    \end{tabularx}
+\end{table}
+
+\textbf{Flujo principal}
+
+\begin{enumerate}
+    \item El actor accede al módulo de gestión de usuarios.
+    \item El sistema muestra la lista de usuarios registrados.
+    \item El actor selecciona crear, modificar o eliminar usuario.
+    \item El sistema solicita la información correspondiente.
+    \item El actor registra o modifica los datos requeridos.
+    \item El sistema valida y almacena la información.
+\end{enumerate}
+
+\textbf{Flujos alternos}
+
+\begin{itemize}
+    \item Datos inválidos:
+          \begin{enumerate}
+              \item El sistema muestra un mensaje de error.
+              \item El actor corrige la información ingresada.
+          \end{enumerate}
+\end{itemize}
+
+\textbf{Diagrama de caso de uso}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{gestion_usuarios}
+    \caption{Flujo del gestión de usuarios.}
+\end{figure}
+
+% ===========================================================================================
+%                                       CU-03
+% ===========================================================================================
+
+\textbf{Caso de uso: Generar reporte de producción}
+
+\begin{table}[H]
+    \centering
+    \caption{Caso de uso - Generar reporte de producción}
+    \label{tab:cu03}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Identificador             & CU-03                                                          \\ \hline
+        Nombre                    & Generar reporte de producción                                  \\ \hline
+        Objetivo                  & Registrar información relacionada con la producción realizada. \\ \hline
+        Actor principal           & Operador                                                       \\ \hline
+        Precondiciones            & El usuario debe haber iniciado sesión en el sistema.           \\ \hline
+        Postcondiciones           & El reporte de producción queda almacenado en el sistema.       \\ \hline
+        Requerimiento relacionado & RF-03                                                          \\ \hline
+    \end{tabularx}
+\end{table}
+
+\textbf{Flujo principal}
+
+\begin{enumerate}
+    \item El operador accede al módulo de reportes de producción.
+    \item El sistema muestra el formulario de captura.
+    \item El operador registra la información requerida.
+    \item El sistema valida los datos ingresados.
+    \item El sistema almacena el reporte de producción.
+\end{enumerate}
+
+\textbf{Diagrama de caso de uso}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{reporte_prod.png}
+    \caption{Flujo de reporte de producción.}
+\end{figure}
+
+% ===========================================================================================
+%                                       CU-04
+% ===========================================================================================
+
+\textbf{Caso de uso: Gestión de registros de producción}
+
+\begin{table}[H]
+    \centering
+    \caption{Caso de uso - Gestión de registros de producción}
+    \label{tab:cu04}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Identificador             & CU-04                                                            \\ \hline
+        Nombre                    & Gestión de registros de producción                               \\ \hline
+        Objetivo                  & Modificar o eliminar registros de producción existentes.         \\ \hline
+        Actor principal           & Operador, Supervisor, Administrador                              \\ \hline
+        Precondiciones            & Deben existir registros de producción almacenados en el sistema. \\ \hline
+        Postcondiciones           & Los registros son actualizados o eliminados correctamente.       \\ \hline
+        Requerimiento relacionado & RF-04                                                            \\ \hline
+    \end{tabularx}
+\end{table}
+
+\textbf{Flujo principal}
+
+\begin{enumerate}
+    \item El actor accede al módulo de registros de producción.
+    \item El sistema muestra los registros disponibles según el rol del usuario.
+    \item El actor selecciona un registro.
+    \item El actor decide modificar o eliminar el registro.
+    \item El sistema procesa la operación solicitada.
+    \item El sistema actualiza la información almacenada.
+\end{enumerate}
+
+\textbf{Reglas de negocio}
+
+\begin{itemize}
+    \item Los operadores únicamente pueden modificar o eliminar sus propios registros.
+    \item Los supervisores y administradores pueden modificar o eliminar cualquier registro.
+\end{itemize}
+
+\textbf{Diagrama de caso de uso}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{gestion_reg}
+    \caption{Flujo de la gestión de registros de producción.}
+\end{figure}
+
+
+% ===========================================================================================
+%                                       CU-05
+% ===========================================================================================
+
+\textbf{Caso de uso: Registro de almacén}
+
+\begin{table}[H]
+    \centering
+    \caption{Caso de uso - Registro de almacén}
+    \label{tab:cu05}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Identificador             & CU-05                                                   \\ \hline
+        Nombre                    & Registro de almacén                                     \\ \hline
+        Objetivo                  & Gestionar la información de materias primas en almacén. \\ \hline
+        Actor principal           & Supervisor                                              \\ \hline
+        Precondiciones            & El supervisor debe haber iniciado sesión en el sistema. \\ \hline
+        Postcondiciones           & La información del almacén queda actualizada.           \\ \hline
+        Requerimiento relacionado & RF-05                                                   \\ \hline
+    \end{tabularx}
+\end{table}
+
+\textbf{Flujo principal}
+
+\begin{enumerate}
+    \item El supervisor accede al módulo de almacén.
+    \item El sistema muestra los registros existentes.
+    \item El supervisor crea, modifica o elimina registros.
+    \item El sistema valida la información ingresada.
+    \item El sistema almacena los cambios realizados.
+\end{enumerate}
+
+\textbf{Diagrama de caso de uso}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{gestion_alma}
+    \caption{Flujo del registro de alamacén.}
+\end{figure}
+
+
+% ===========================================================================================
+%                                       CU-06
+% ===========================================================================================
+
+\textbf{Caso de uso: Visualización del stock en almacén}
+
+\begin{table}[H]
+    \centering
+    \caption{Caso de uso - Visualización del stock en almacén}
+    \label{tab:cu06}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Identificador             & CU-06                                                         \\ \hline
+        Nombre                    & Visualización del stock en almacén                            \\ \hline
+        Objetivo                  & Consultar el stock disponible de materias primas y productos. \\ \hline
+        Actor principal           & Operador, Supervisor, Administrador                           \\ \hline
+        Precondiciones            & Deben existir registros de almacén en el sistema.             \\ \hline
+        Postcondiciones           & El usuario visualiza la información solicitada.               \\ \hline
+        Requerimiento relacionado & RF-06                                                         \\ \hline
+    \end{tabularx}
+\end{table}
+
+\textbf{Flujo principal}
+
+\begin{enumerate}
+    \item El usuario accede al módulo de almacén.
+    \item El sistema muestra el stock disponible.
+    \item El usuario consulta la información requerida.
+\end{enumerate}
+
+\textbf{Diagrama de caso de uso}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{consulta_stock}
+    \caption{Flujo de la visualización de stock.}
+\end{figure}
+
+% ===========================================================================================
+%                                       CU-07
+% ===========================================================================================
+
+\textbf{Caso de uso: Visualización de la producción}
+
+\begin{table}[H]
+    \centering
+    \caption{Caso de uso - Visualización de la producción}
+    \label{tab:cu07}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Identificador             & CU-07                                                \\ \hline
+        Nombre                    & Visualización de la producción                       \\ \hline
+        Objetivo                  & Consultar la producción registrada por día y turno.  \\ \hline
+        Actor principal           & Supervisor                                           \\ \hline
+        Precondiciones            & Deben existir registros de producción en el sistema. \\ \hline
+        Postcondiciones           & El supervisor visualiza la información seleccionada. \\ \hline
+        Requerimiento relacionado & RF-07                                                \\ \hline
+    \end{tabularx}
+\end{table}
+
+\textbf{Flujo principal}
+
+\begin{enumerate}
+    \item El supervisor accede al módulo de producción.
+    \item El sistema solicita la fecha y turno.
+    \item El supervisor selecciona los parámetros de consulta.
+    \item El sistema muestra la información correspondiente.
+\end{enumerate}
+
+\textbf{Diagrama de caso de uso}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{ver_prod}
+    \caption{Flujo de la visualización de producción.}
+\end{figure}
+
+% ===========================================================================================
+%                                       CU-08
+% ===========================================================================================
+
+\textbf{Caso de uso: Programación de órdenes de producción}
+
+\begin{table}[H]
+    \centering
+    \caption{Caso de uso - Programación de órdenes de producción}
+    \label{tab:cu08}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Identificador             & CU-08                                                        \\ \hline
+        Nombre                    & Programación de órdenes de producción                        \\ \hline
+        Objetivo                  & Gestionar la programación de órdenes de producción.          \\ \hline
+        Actor principal           & Programador                                                  \\ \hline
+        Precondiciones            & El programador debe haber iniciado sesión en el sistema.     \\ \hline
+        Postcondiciones           & Las órdenes de producción quedan registradas o actualizadas. \\ \hline
+        Requerimiento relacionado & RF-08                                                        \\ \hline
+    \end{tabularx}
+\end{table}
+
+\textbf{Flujo principal}
+
+\begin{enumerate}
+    \item El programador accede al módulo de programación.
+    \item El sistema muestra las órdenes existentes.
+    \item El programador registra o modifica órdenes de producción.
+    \item El sistema valida la información.
+    \item El sistema almacena la programación correspondiente.
+\end{enumerate}
+
+\textbf{Diagrama de caso de uso}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{prog_ordenes}
+    \caption{Flujo de la programación de ordenes.}
+\end{figure}
+
+% ===========================================================================================
+%                                       CU-09
+% ===========================================================================================
+
+\textbf{Caso de uso: Modificación de productos}
+
+\begin{table}[H]
+    \centering
+    \caption{Caso de uso - Modificación de productos}
+    \label{tab:cu09}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        Identificador             & CU-09                                                      \\ \hline
+        Nombre                    & Modificación de productos                                  \\ \hline
+        Objetivo                  & Actualizar las especificaciones de productos registrados.  \\ \hline
+        Actor principal           & Administrador                                              \\ \hline
+        Precondiciones            & Deben existir productos registrados en el sistema.         \\ \hline
+        Postcondiciones           & Las especificaciones de los productos quedan actualizadas. \\ \hline
+        Requerimiento relacionado & RF-09                                                      \\ \hline
+    \end{tabularx}
+\end{table}
+
+\textbf{Flujo principal}
+
+\begin{enumerate}
+    \item El administrador accede al módulo de productos.
+    \item El sistema muestra las especificaciones registradas.
+    \item El administrador modifica la información requerida.
+    \item El sistema valida los cambios realizados.
+    \item El sistema actualiza las especificaciones correspondientes.
+\end{enumerate}
+
+\textbf{Diagrama de caso de uso}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{mod_prod}
+    \caption{Flujo de modificación de productos.}
+\end{figure}
