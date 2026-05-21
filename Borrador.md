@@ -38,12 +38,50 @@ Sin embargo, es importante denotar que todos los módulos propios del Sistema In
 
 ## Casos de uso
 
+...
+
 ## Arquitectura de software
+
+La arquitectura de software es la forma en la cual un sistema informático se diseña estructural-mente durante su desarrollo con el propósito de darle responsabilidades a cada sección declarada y establecer la forma en la cual estas se comunican entre si.
+
+Existen diferentes arquitecturas de software que han nacido de necesidades específicas durante el desarrollo del mismo o dependiendo de la naturaleza para lo que fue creado el software, estas soluciones han sido probadas por diferentes equipos y se han demostrado su eficacia siendo adoptadas a lo largo de la historia.
+
+En el caso de la arquitectura de software escogida para los módulos del Sistema Integral de Producción se tienen la arquitectura de N-Capas (Multi-layer architecture) para el apartado del backend y para la parte del frontend una arquitectura basada en componentes (Component-Based Architecture) siendo este último más un patrón de organización, pero adoptada a aplicaciones web modernas.
 
 ### Estructura backend
 
+En la estructura del backend podemos encontrar la arquitectura de N-capas, estas separan la responsabilidad de cada apartado del backend y el "modelo de negocio" establecido para este sistema de acuerdo que no se mezclen soluciones entre cada capa y el flujo de la información y procedimientos sea en un sentido determinado teniendo que pasar por cada capa involucrada para un tratamiento o procesamiento de la información o procesos para llevar a un resultado esperado.
+
+Dentro de las capas que podemos denotar especialmente en esta solución son 3
+
+1. La capa de controlador (controller).
+2. La capa de negocio (business).
+3. La capa de datos (data).
+
 ### Estructura frontend
 
-## Esquema de bases de datos
+En el apartado del frontend el patron de arquitectura basado en componentes muestra la independencia y utilidad por cada apartado dentro del sistema web, teniendo los siguientes apartados.
 
-## Modulos del software
+#### Components
+
+Refiere a la parte en donde se estructuran componentes atómicos los cuales son reutilizados en diferentes partes de los módulos del SIP, estos esquematizan una utilidad que puede cambiar (su estado) dependiendo de la necesidad donde se implemente
+
+#### Hooks
+
+Son los procesos que permiten modificar la funcionalidad a través de la interacción con el usuario que manipula el componente una vez integrado en su módulo correspondiente y que son generales .
+
+#### Utils
+
+Son funciones de utilidad como cálculos de fechas, formateo de información, ordenamientos de datos, entre otras funciones varías que se utilizan en diferentes componentes para evitar duplicidad de código
+
+#### Styles
+
+Son los archivos de estilos en formato CSS que modifican el estilo de los componentes.
+
+#### Views
+
+Son la contrucción de vistas completas que integran los componentes generando una interacción más compleja las cuales contienen los flujos de información por los cuales los usuarios interactuan.
+
+Adicionalmente, dentro de los apartados de "Components" pueden contener cada componente una carpeta de "Hooks" que cumple con el mismo propósito que la carpeta de hooks general solo que estas contienen las funcionalidades específicas para un componente basado en sus requerimientos.
+
+## Módulos del software
