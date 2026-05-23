@@ -1,5 +1,78 @@
 \section{Arquitectura de software}
 
-\subsection{Estructura backend}
+La arquitectura de software define la estructura y organización de un sistema informático durante su desarrollo, estableciendo las responsabilidades de cada uno de sus componentes y la forma en que estos interactúan entre sí. Su propósito principal es garantizar una adecuada separación de responsabilidades, facilitar el mantenimiento del sistema y mejorar la escalabilidad y reutilización de sus módulos.
 
-\subsection{Estructura Frontend}
+A lo largo del tiempo han surgido diferentes arquitecturas de software como respuesta a necesidades específicas dentro del desarrollo de aplicaciones. Estas arquitecturas han sido implementadas y validadas por diversos equipos de desarrollo, demostrando su eficacia en distintos contextos y convirtiéndose en estándares ampliamente adoptados en la industria.
+
+Para el desarrollo de los módulos del Sistema Integral de Producción (SIP) se seleccionaron dos enfoques arquitectónicos principales: una arquitectura de N-Capas (\textit{Multi-layer Architecture}) para el backend y una arquitectura basada en componentes (\textit{Component-Based Architecture}) para el frontend. Este último enfoque, aunque también puede considerarse un patrón de organización, es ampliamente utilizado en aplicaciones web modernas debido a su modularidad y reutilización de elementos visuales y funcionales.
+
+\subsection{Estructura del backend}
+
+La estructura del backend se basa en una arquitectura de N-Capas, la cual divide las responsabilidades del sistema en diferentes niveles funcionales. Esta separación permite mantener un flujo ordenado de la información y evita la mezcla de responsabilidades entre componentes, facilitando el mantenimiento, la escalabilidad y la comprensión del sistema.
+
+En esta arquitectura, la información debe atravesar cada una de las capas involucradas antes de completar un proceso o generar una respuesta al usuario. Las principales capas implementadas en esta solución son las siguientes:
+
+\begin{enumerate}
+    \item Capa de controlador (Controller).
+    \item Capa de servicio (Service).
+    \item Capa de negocio (Business).
+    \item Capa de datos (Data).
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{arq_back}
+    \caption{Arquitectura del backend.}
+\end{figure}
+
+Cada capa cumple una función específica dentro del flujo de procesamiento de la información:
+
+\textbf{Controller}
+
+La capa de controlador es responsable de recibir las solicitudes HTTP provenientes del cliente. Representa el punto de entrada al backend y actúa como intermediario inicial entre el frontend y el sistema, validando y canalizando las peticiones hacia las capas correspondientes.
+
+\textbf{Service}
+
+La capa de servicio se encarga de coordinar el flujo de información entre el controlador y la lógica de negocio. Su función principal es determinar qué procesos o reglas de negocio deben ejecutarse según el tipo de solicitud recibida.
+
+\textbf{Business}
+
+La capa de negocio contiene la lógica principal del sistema y define la manera en que se procesan los datos y se ejecutan las reglas operativas del modelo de negocio. En esta capa se implementan los procedimientos y validaciones que representan el comportamiento funcional del sistema.
+
+\textbf{Data}
+
+La capa de datos es responsable del acceso y manipulación de la información almacenada en la base de datos. Su función consiste en realizar operaciones de consulta, inserción, actualización y eliminación de datos, actuando como intermediario entre la base de datos y las demás capas del backend.
+
+\subsection{Estructura del frontend}
+
+Para el desarrollo del frontend se implementó una arquitectura basada en componentes, la cual permite dividir la interfaz del sistema en elementos reutilizables e independientes. Este enfoque facilita la organización del código, mejora la mantenibilidad y permite reutilizar funcionalidades en distintos módulos del sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{arq_front}
+    \caption{Arquitectura del frontend.}
+\end{figure}
+
+La estructura principal del frontend se organiza en los siguientes apartados:
+
+\textbf{Components}
+
+La carpeta de componentes contiene elementos reutilizables de la interfaz gráfica. Estos componentes representan unidades funcionales y visuales independientes que pueden utilizarse en diferentes módulos del SIP, adaptando su comportamiento y estado según el contexto en el que sean implementados.
+
+\textbf{Hooks}
+
+Los hooks contienen la lógica funcional relacionada con la interacción del usuario y el manejo del estado de los componentes. Permiten reutilizar comportamientos comunes entre diferentes módulos y centralizar funcionalidades compartidas.
+
+\textbf{Utils}
+
+La carpeta de utilidades agrupa funciones auxiliares utilizadas en distintas partes del sistema, tales como formateo de datos, cálculos de fechas, ordenamiento de información y otros procesos reutilizables. Su objetivo principal es evitar la duplicidad de código y facilitar el mantenimiento.
+
+\textbf{Styles}
+
+Este apartado contiene los archivos de estilos en formato CSS encargados de definir la apariencia visual de los componentes y las vistas del sistema.
+
+\textbf{Views}
+
+Las vistas representan estructuras completas de interfaz construidas a partir de la integración de múltiples componentes. En ellas se implementan los flujos de interacción del usuario y la presentación de la información correspondiente a cada módulo del sistema.
+
+Adicionalmente, algunos componentes pueden incluir carpetas internas de Hooks destinadas a manejar funcionalidades específicas del propio componente. Esto permite encapsular comportamientos particulares y mantener una mejor organización del código según los requerimientos de cada elemento.
