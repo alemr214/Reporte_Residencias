@@ -52,11 +52,30 @@ En el caso de la arquitectura de software escogida para los módulos del Sistema
 
 En la estructura del backend podemos encontrar la arquitectura de N-capas, estas separan la responsabilidad de cada apartado del backend y el "modelo de negocio" establecido para este sistema de acuerdo que no se mezclen soluciones entre cada capa y el flujo de la información y procedimientos sea en un sentido determinado teniendo que pasar por cada capa involucrada para un tratamiento o procesamiento de la información o procesos para llevar a un resultado esperado.
 
-Dentro de las capas que podemos denotar especialmente en esta solución son 3
+Dentro de las capas que podemos denotar especialmente en esta solución son 4
 
 1. La capa de controlador (controller).
-2. La capa de negocio (business).
-3. La capa de datos (data).
+2. La capa de servicio (servicio)
+3. La capa de negocio (business).
+4. La capa de datos (data).
+
+Cada sigue su funcionamiento pasando la información hacia la siguiente capa, las utilidades de estas son:
+
+#### Controller
+
+Es aquella capa que se encarga de recibir todas las solicitudes HTTP hechas desde el cliente siendo el primer frente en el cual se realiza la conexión entre el backend y el frontend
+
+#### Service
+
+Una vez obtenida la información de la capa de controlador, dependiendo de esta misma es que redirige la información hacia una parte de la business u a otra de la siguiente capa, esta gestiona que lógica de negocio es la más apropiada para manejar esta información
+
+#### Business
+
+En esta capa está toda la gestión procedimental (el modelo de negocios) de como el sistema maneja la información.
+
+#### Data
+
+Esta capa maneja el acceso a los datos de la base de datos, se encarga de guardar y obtener datos directamente desde la base de datos siendo el conector entre la DB y el backend.
 
 ### Estructura frontend
 
