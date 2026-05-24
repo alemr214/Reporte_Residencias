@@ -1,1 +1,119 @@
-\section{Modulos del software}
+\section{Módulos del software}
+
+Durante el período de residencias profesionales se desarrollaron diversos módulos que integran las funcionalidades necesarias para cumplir con los requerimientos establecidos para el Sistema Integral de Producción. El desarrollo de estos módulos se llevó a cabo siguiendo las arquitecturas previamente definidas por el equipo de trabajo y respetando los estándares de desarrollo establecidos por Tenaris.
+
+La aplicación web fue construida bajo una arquitectura basada en componentes para el desarrollo Frontend, lo que permitió la reutilización de elementos visuales y funcionales en distintos módulos del sistema, favoreciendo la mantenibilidad, escalabilidad y consistencia de la interfaz de usuario.
+
+Con base en los requerimientos operativos definidos por el equipo de Operational Planning IT, se estableció la distribución de los módulos que conforman el sistema, los cuales se describen a continuación.
+
+\subsection{Inicio de sesión}
+
+El módulo de inicio de sesión fue desarrollado para permitir el acceso de los usuarios mediante el ingreso de sus credenciales institucionales, conformadas por nombre de usuario y contraseña (Figura \ref{fig:esq_inicio_sesion}).
+
+Debido a que en distintas plantas de TenarisTamsa no todos los operadores cuentan con un equipo de cómputo asignado de manera individual, se habilitaron equipos compartidos cercanos a las máquinas de operación para facilitar el acceso al sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{desarrollo/mod_sesion.jpg}
+    \caption{Esquematización del inicio de sesión.}
+    \label{fig:esq_inicio_sesion}
+\end{figure}
+
+Como parte de las funcionalidades implementadas, se incorporó un listado de usuarios que previamente habían iniciado sesión en el sistema, permitiendo el autocompletado del nombre de usuario y agilizando el proceso de autenticación (Ver Figura \ref{fig:comp_list_usuario}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{desarrollo/comp_user_info.jpg}
+    \caption{Componente listado de usuarios.}
+    \label{fig:comp_list_usuario}
+\end{figure}
+
+Adicionalmente, se integraron filtros orientados a los operadores encargados de reportar producción, permitiendo seleccionar desde el inicio de sesión la planta, el proceso y la máquina de trabajo correspondientes (Ver Figura \ref{fig:comp_filtro_prod}). Con ello, el usuario puede acceder directamente al módulo de reporte de producción con la información previamente configurada.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{desarrollo/comp_filtro_sesion.jpg}
+    \caption{Componente filtro de producción.}
+    \label{fig:comp_filtro_prod}
+\end{figure}
+
+\subsection{Gestión de usuarios}
+
+El módulo de gestión de usuarios permite la administración de cuentas dentro del sistema de acuerdo con el rol asignado a cada usuario.
+
+La interfaz incluye filtros de búsqueda por matrícula y una tabla de registros desde la cual es posible realizar acciones de alta, modificación y eliminación de usuarios. Entre los datos administrados se encuentran la matrícula, nombre de usuario, fotografía y roles asignados dentro del sistema (Figura \ref{fig:esq_gest_usuarios}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{desarrollo/mod_gest_usuarios.jpg}
+    \caption{Esquematización de la gestión de usuarios.}
+    \label{fig:esq_gest_usuarios}
+\end{figure}
+
+\subsection{Reportar producción}
+
+El módulo de reporte de producción fue diseñado para que los usuarios con rol de operador puedan registrar la producción realizada durante su turno de trabajo.
+
+Dentro de esta vista, el operador puede seleccionar el proceso y la máquina de trabajo correspondiente, los cuales pueden cargarse automáticamente cuando fueron definidos previamente desde el inicio de sesión. Asimismo, el usuario puede seleccionar la orden de producción asignada, previamente registrada por el área de programación (Figura \ref{fig:esq_rep_prod}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{desarrollo/mod_reportar_prod.jpg}
+    \caption{Esquematización de reportar producción.}
+    \label{fig:esq_rep_prod}
+\end{figure}
+
+La interfaz del módulo se encuentra dividida en tres secciones principales, implementadas mediante componentes de tipo acordeón.
+
+\textbf{Stock utilizado}
+
+Esta sección muestra un listado del stock disponible para su utilización, ya sea proveniente del almacén o generado por procesos previos que hayan reportado producción anteriormente. El operador puede seleccionar el material correspondiente para utilizarlo dentro de su proceso de trabajo (Figura \ref{fig:comp_stock}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{desarrollo/comp_stock.jpg}
+    \caption{Componente estado del stock.}
+    \label{fig:comp_stock}
+\end{figure}
+
+\textbf{Reporte de producción}
+
+En esta sección el operador puede registrar la cantidad de piezas o material producido durante el turno, diferenciando entre producción aprobada y producción defectuosa. Además, se registra el identificador del producto asociado al reporte realizado (Figura \ref{fig:comp_rep_prod}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{desarrollo/comp_reportar_prod.jpg}
+    \caption{Componente reportar producción.}
+    \label{fig:comp_rep_prod}
+\end{figure}
+
+\textbf{Línea de tiempo del turno}
+
+Se implementó una línea de tiempo que se actualiza en tiempo real con base en las actividades registradas durante el turno dentro del Sistema Integral de Producción. Esta funcionalidad permite visualizar de manera gráfica los eventos y reportes asociados a la operación realizada .
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{desarrollo/comp_status_prod.jpg}
+    \caption{Componente estado del turno.}
+    \label{fig:comp_status_turno}
+\end{figure}
+
+\subsection{Registro de stock en almacén}
+
+El módulo de registro de stock en almacén permite visualizar los registros de materia prima disponibles dentro del almacén, así como dar de alta nuevos productos mediante sus identificadores correspondientes.
+
+Dependiendo del rol asignado al usuario, la vista habilita funcionalidades de consulta o registro de información, garantizando un control adecuado sobre la administración del stock.
+
+\subsection{Ver reporte de producción}
+
+El módulo de visualización de reportes de producción permite a los usuarios con rol de supervisor consultar de manera integral la producción registrada en una planta determinada.
+
+La vista cuenta con filtros de fecha, turno y planta, permitiendo navegar entre distintos períodos y obtener reportes específicos según los criterios seleccionados.
+
+Con el objetivo de mantener una organización clara de la información, se implementaron componentes de tipo acordeón para cada proceso productivo. Dentro de cada proceso se despliega un listado de las máquinas asociadas, mostrando información resumida sobre la productividad, una línea de tiempo actualizada en tiempo real y el operador asignado a cada máquina.
+
+\subsection{Registro del programa}
+
+El módulo de registro del programa fue desarrollado para los usuarios con rol de programador, permitiendo la gestión de las órdenes de producción registradas en el sistema.
+
+Dentro de esta vista, los usuarios pueden comparar el programa vigente con una nueva propuesta de programación, identificando órdenes agregadas, eliminadas o modificadas. Esto facilita la actualización de la planeación de producción de acuerdo con las necesidades y demandas de la compañía.
