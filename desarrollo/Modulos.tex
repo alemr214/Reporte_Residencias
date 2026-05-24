@@ -89,7 +89,7 @@ En esta sección el operador puede registrar la cantidad de piezas o material pr
 
 \textbf{Línea de tiempo del turno}
 
-Se implementó una línea de tiempo que se actualiza en tiempo real con base en las actividades registradas durante el turno dentro del Sistema Integral de Producción. Esta funcionalidad permite visualizar de manera gráfica los eventos y reportes asociados a la operación realizada .
+Se implementó una línea de tiempo que se actualiza en tiempo real con base en las actividades registradas durante el turno dentro del Sistema Integral de Producción. Esta funcionalidad permite visualizar de manera gráfica los eventos y reportes asociados a la operación realizada (Figura \ref{fig:comp_status_turno}).
 
 \begin{figure}[H]
     \centering
@@ -100,9 +100,23 @@ Se implementó una línea de tiempo que se actualiza en tiempo real con base en 
 
 \subsection{Registro de stock en almacén}
 
-El módulo de registro de stock en almacén permite visualizar los registros de materia prima disponibles dentro del almacén, así como dar de alta nuevos productos mediante sus identificadores correspondientes.
+El módulo de registro de stock en almacén permite visualizar los registros de materia prima disponibles dentro del almacén, así como dar de alta nuevos productos mediante sus identificadores correspondientes (Figura \ref{fig:esq_ingreso_stock}).
 
-Dependiendo del rol asignado al usuario, la vista habilita funcionalidades de consulta o registro de información, garantizando un control adecuado sobre la administración del stock.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{desarrollo/mod_almacen.jpg}
+    \caption{Esquematización del ingreso de stock.}
+    \label{fig:esq_ingreso_stock}
+\end{figure}
+
+Dependiendo del rol asignado al usuario, la vista habilita funcionalidades de consulta o registro de información, garantizando un control adecuado sobre la administración del stock (Figura \ref{fig:comp_filtro_almacen}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{desarrollo/comp_filtro_almacen.jpg}
+    \caption{Componente filtro del almacen.}
+    \label{fig:comp_filtro_almacen}
+\end{figure}
 
 \subsection{Ver reporte de producción}
 
