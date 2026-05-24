@@ -120,12 +120,32 @@ Dependiendo del rol asignado al usuario, la vista habilita funcionalidades de co
 
 \subsection{Ver reporte de producción}
 
-El módulo de visualización de reportes de producción permite a los usuarios con rol de supervisor consultar de manera integral la producción registrada en una planta determinada.
+El módulo de visualización de reportes de producción permite a los usuarios con rol de supervisor consultar de manera integral la producción registrada en una planta determinada (Figura \ref{fig:esq_reporte_prod}).
 
-La vista cuenta con filtros de fecha, turno y planta, permitiendo navegar entre distintos períodos y obtener reportes específicos según los criterios seleccionados.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{desarrollo/mod_reporte_prod.jpg}
+    \caption{Esquematización del reporte de producción.}
+    \label{fig:esq_reporte_prod}
+\end{figure}
 
-Con el objetivo de mantener una organización clara de la información, se implementaron componentes de tipo acordeón para cada proceso productivo. Dentro de cada proceso se despliega un listado de las máquinas asociadas, mostrando información resumida sobre la productividad, una línea de tiempo actualizada en tiempo real y el operador asignado a cada máquina.
+La vista cuenta con filtros de fecha, turno y planta, permitiendo navegar entre distintos períodos y obtener reportes específicos según los criterios seleccionados (Figura \ref{fig:comp_filtro_fecha}).
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{desarrollo/comp_filtro_fecha.jpg}
+    \caption{Componente filtro de fechas.}
+    \label{fig:comp_filtro_fecha}
+\end{figure}
+
+Con el objetivo de mantener una organización clara de la información, se implementaron componentes de tipo acordeón para cada proceso productivo. Dentro de cada proceso se despliega un listado de las máquinas asociadas, mostrando información resumida sobre la productividad, una línea de tiempo actualizada en tiempo real y el operador asignado a cada máquina (Figura \ref{fig:comp_status_proc}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{desarrollo/comp_status_proc.jpg}
+    \caption{Componente estado del proceso.}
+    \label{fig:comp_status_proc}
+\end{figure}
 \subsection{Registro del programa}
 
 El módulo de registro del programa fue desarrollado para los usuarios con rol de programador, permitiendo la gestión de las órdenes de producción registradas en el sistema.
